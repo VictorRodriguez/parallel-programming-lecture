@@ -8,10 +8,8 @@ This is plan to be deliverable in a period of time of 10 weeks
 It is adjustable  in time and order; however the expectations and basic topics should keep the essence of the plan.
 
 Agenda:
-
-* OS Architecture
   * Introduction (week 1)
-    * What is an Operating Systems
+    * What is an Operating System
       * https://drive.google.com/open?id=0B7iKrGdVkDhIOElQYnhRU09TWXc
     * Operating System Structure
       * https://drive.google.com/file/d/0B7iKrGdVkDhIZVB4RkY4MHdYd2M/view?usp=sharing
