@@ -40,15 +40,7 @@ Oftopic Trainings ( in case student needs them )
 
 Pondaration:
 
- * 35% First Term
-   * 15% Weekly Quizzes
-   * 5% Reading Summaries
-   * 15% Labs
-
- * 35% Second Term
-   * 15%  Weekly Quizzes
-   * 5% Reading Summaries
-   * 15% Labs
+TBD
 
 * 30% Final Exam ( if student decides to do final project it is = 10% and final exam 20 % )
 
