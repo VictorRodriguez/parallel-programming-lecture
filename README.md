@@ -10,7 +10,7 @@ It is adjustable  in time and order; however the expectations and basic topics s
 Agenda:
   * Introduction (week 1)
     * What is an Operating System
-      * https://drive.google.com/open?id=0B7iKrGdVkDhIOElQYnhRU09TWXc
+      * https://drive.google.com/file/d/0B7iKrGdVkDhIOElQYnhRU09TWXc/view?usp=sharing&resourcekey=0-RG3mVzZQO7m7AXlEkKZMyg
     * Operating System Structure
       * https://drive.google.com/file/d/0B7iKrGdVkDhIZVB4RkY4MHdYd2M/view?usp=sharing
   * Process Management (week 2 -3)
@@ -28,7 +28,7 @@ Oftopic Trainings ( in case student needs them )
   * C basic trining:
     * https://www.linkedin.com/learning/advanced-c-programming/
   * Git training
-    * https://drive.google.com/file/d/0B7iKrGdVkDhINERiQnppOU5IVVk/view?usp=sharing
+    * https://drive.google.com/file/d/0B7iKrGdVkDhINERiQnppOU5IVVk/view?usp=sharing&resourcekey=0-8c9eesP7d6gOq5NWqwH5-Q
   * Bash Trainings:
     * https://drive.google.com/file/d/0B7iKrGdVkDhILU9QRWllWmNKM2M/view?usp=sharing
     * https://drive.google.com/file/d/0B7iKrGdVkDhIWGVhVzhtTlZjWGc/view?usp=sharing
