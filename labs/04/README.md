@@ -8,13 +8,11 @@ Develop the skills to program an application that solves a problem using threads
 * Linux machine, either a VM or a baremetal host
 * GCC compiler (at least version 4.8)
 * shell scripting
-* git send mail server installed and configured on your Linux machine
 
 ## Instructions
 
 * Clone the repository
-* Go to operating-systems-lecture/labs/04
-* Read examples from operating-systems-lecture/labs/04
+* Go to labs/04
 * Calculate the value of Pi ( 3.141596 ) using this algorithm:
 
 ```
@@ -36,7 +34,7 @@ PI = 4.0*circle_count/npoints
 
 more info: https://computing.llnl.gov/tutorials/parallel_comp/ )
 
-Please send the code as a patch and include in the comments of the code (at
+Please send the code as Pull request and include in the comments of the code (at
 the top), the results in terms of a link to a graph that shows the speed
 improvements, how much time does it take to calculate pi with 1 thread, 2
 threads 4 threads 8 threads and 16 threads?
@@ -66,16 +64,9 @@ the link could be to a google documents pdf. please create good graphs:
 3.151596...
 ```
 
-## Please send the mail as git send mail:
+## How to do a pull request:
+https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-```
-$ git add my_terminal.c
-$ git commit -s -m <STUDENT-ID>-homework-04
-$ git send-email -1
-
-```
-Do some tests sending the mail to your personal account, if you get the mail,
-then you can be sure I will get the mail
 
 # Time to do the homework:
 
