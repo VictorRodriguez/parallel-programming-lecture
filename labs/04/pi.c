@@ -9,19 +9,20 @@ Threads */
 #include <pthread.h>
 #include <time.h>
 
-#define POINTS 10000000
+#define POINTS 1000000
 // Threads to be used
 #define nThreads 4 
 
 // Work to be done per thread
-int work_thread = POINTS/nThreads;
+ int work_thread = POINTS/nThreads;
+ pthread_t thread[nThreads];
 
 double x,y; // coordinates
 int count = 0; /* # of points in the 1st quadrant of unit circle */
 double z; // distance between points
 double pi;
 
-pthread_t thread[nThreads];
+// pthread_t thread[nThreads];
 
 unsigned int SEED;
 
@@ -33,9 +34,9 @@ double GenerateRAND(){
 
 /* Function to compute the value of pi
 given the random numbre of the coordinates */
-void *ComputePI( void* arg){
+void *ComputePI(void* arg){
 
-    for (int i = 0; i<work_thread; i++) {
+    for (int i = 0; i<POINTS; i++) {
         x = GenerateRAND();
         y = GenerateRAND();
         z = (x*x) + (y*y);
