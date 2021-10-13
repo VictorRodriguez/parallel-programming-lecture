@@ -5,6 +5,7 @@
 
 #define NITER 1000000
 
+sem_t semaphore;
 int cnt = 0;
 
 void * Count(void * a)
@@ -12,14 +13,17 @@ void * Count(void * a)
     int i, tmp;
     for(i = 0; i < NITER; i++)
     {
+        sem_wait(&semaphore);
         tmp = cnt;      /* copy the global cnt locally */
         tmp = tmp+1;    /* increment the local copy */
         cnt = tmp;      /* store the local value into the global cnt */
+        sem_post(&semaphore);
     }
 }
 
 int main(int argc, char * argv[])
 {
+    sem_init(&semaphore,0,1);
     pthread_t tid1, tid2;
 
     if(pthread_create(&tid1, NULL, Count, NULL))

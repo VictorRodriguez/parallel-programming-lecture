@@ -1,7 +1,9 @@
-/* This program compues pi
-using Monte Carlo algorithm and the implementation of
-Threads 
+/* This program computes pi (3.14)
+using Monte Carlo algorithm and the implementation of Threads 
 Jose Miguel Figarola Prado
+
+https://docs.google.com/document/d/1hi8iKU3lW-wkWX8r4UpvseC2qjNW-LhhU3bnosipi2I/edit?usp=sharing
+
 */
 
 #include <stdlib.h>
@@ -11,6 +13,7 @@ Jose Miguel Figarola Prado
 #include <pthread.h>
 #include <time.h>
 
+// Point to be utilized
 #define POINTS 1000000
 // Threads to be used
 #define nThreads 2
@@ -35,10 +38,10 @@ double GenerateRAND(){
 }
 
 /* Function to compute the value of pi
-given the random numbre of the coordinates */
+given the random numbers of the coordinates */
 void *ComputePI(void* arg){
 
-    for (int i = 0; i<POINTS; i++) {
+    for (int i = 0; i<work_thread; i++) {
         x = GenerateRAND();
         y = GenerateRAND();
         z = (x*x) + (y*y);
@@ -56,7 +59,7 @@ int main(){
     clock_t begin = clock();
     SEED = time(NULL);
 
-    printf("Doing %d points per thread\n", work_thread);
+    printf("Doing %d points per thread --> %d\n", work_thread,nThreads);
 
     // Create the threads requiered 
     for(int j=0; j<nThreads; j++){
@@ -69,8 +72,7 @@ int main(){
     }
 
     // Calculate pi
-    pi = ((double)count/POINTS*4)/nThreads;
-
+    pi = (double)count/POINTS*4;
 
     // Time the process
     clock_t end = clock();
