@@ -72,7 +72,7 @@ int main() {
 
 	else if (pid == 0) {
 		/* child process */
-		execlp("/bin/ls","ls",NULL);
+		execlp("./hello","hello",NULL);
 		printf("hi there !!!! \n");
 	}
 
