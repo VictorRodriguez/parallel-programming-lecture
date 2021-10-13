@@ -10,16 +10,16 @@ It is adjustable  in time and order; however the expectations and basic topics s
 Agenda:
   * Introduction (week 1)
     * What is an Operating System
-      * https://drive.google.com/open?id=0B7iKrGdVkDhIOElQYnhRU09TWXc
+      * https://drive.google.com/file/d/0B7iKrGdVkDhIOElQYnhRU09TWXc/view?usp=sharing&resourcekey=0-RG3mVzZQO7m7AXlEkKZMyg
     * Operating System Structure
-      * https://drive.google.com/file/d/0B7iKrGdVkDhIZVB4RkY4MHdYd2M/view?usp=sharing
+      * https://drive.google.com/file/d/0B7iKrGdVkDhIZVB4RkY4MHdYd2M/view?usp=sharing&resourcekey=0-SqgAM1Wl5GcodVGqPjD8Ww
   * Process Management (week 2 -3)
      * Processes
-       * https://drive.google.com/file/d/0B7iKrGdVkDhIR2VORXdGLVZGVVU/view?usp=sharing
+       * https://drive.google.com/file/d/0B7iKrGdVkDhIR2VORXdGLVZGVVU/view?usp=sharing&resourcekey=0-DM_10or77vxbem9C1p3abg
      * Threads
-       * https://drive.google.com/file/d/0B7iKrGdVkDhIN1A2Y1AwbkpIeHM/view?usp=sharing
+       * https://drive.google.com/file/d/0B7iKrGdVkDhIN1A2Y1AwbkpIeHM/view?usp=sharing&resourcekey=0-YGEA2hgiFu_TxsWP4HXNyQ
   * Process Synchronization (week 4 - 5)
-       * https://drive.google.com/open?id=0B7iKrGdVkDhIbDg1VHY4aUNkZzg
+       * https://drive.google.com/file/d/0B7iKrGdVkDhIbDg1VHY4aUNkZzg/view?usp=sharing&resourcekey=0-MRqyxftaj3CVV2Hc4z5emg
   * Parallel Hardware and Parallel Software (week 6 - 7)
   * Shared Memory Programing with OpenMP (week 8 - 9)
   * Distributed Memory programing with MPI (week 10)
@@ -28,15 +28,15 @@ Oftopic Trainings ( in case student needs them )
   * C basic trining:
     * https://www.linkedin.com/learning/advanced-c-programming/
   * Git training
-    * https://drive.google.com/file/d/0B7iKrGdVkDhINERiQnppOU5IVVk/view?usp=sharing
+    * https://drive.google.com/file/d/0B7iKrGdVkDhIN1A2Y1AwbkpIeHM/view?usp=sharing&resourcekey=0-YGEA2hgiFu_TxsWP4HXNyQ
   * Bash Trainings:
-    * https://drive.google.com/file/d/0B7iKrGdVkDhILU9QRWllWmNKM2M/view?usp=sharing
-    * https://drive.google.com/file/d/0B7iKrGdVkDhIWGVhVzhtTlZjWGc/view?usp=sharing
-    * https://drive.google.com/file/d/0B7iKrGdVkDhIRkVPSlNPdkdSS2c/view?usp=sharing
-    * https://drive.google.com/file/d/0B7iKrGdVkDhIbkdKYWI1R19oMzQ/view?usp=sharing
+    * https://drive.google.com/file/d/0B7iKrGdVkDhILU9QRWllWmNKM2M/view?usp=sharing&resourcekey=0-kupyruZHY8ZyMM6sMHahPg
+    * https://drive.google.com/file/d/0B7iKrGdVkDhILU9QRWllWmNKM2M/view?usp=sharing&resourcekey=0-kupyruZHY8ZyMM6sMHahPg
+    * https://drive.google.com/file/d/0B7iKrGdVkDhIRkVPSlNPdkdSS2c/view?usp=sharing&resourcekey=0-IkLYuuS_Jnrh8RMRrGc8Xg
+    * https://drive.google.com/file/d/0B7iKrGdVkDhIbkdKYWI1R19oMzQ/view?usp=sharing&resourcekey=0-v5NAmE2Su0E1atV-FbCJwg
 
   * GCC for performance Trainings:
-    * https://drive.google.com/open?id=0B7iKrGdVkDhIUzZTVTduczJrQTg
+    * https://drive.google.com/file/d/0B7iKrGdVkDhIUzZTVTduczJrQTg/view?usp=sharing&resourcekey=0-BtxiOED-kxXuVq_ESe-fNQ
 
 Pondaration:
 
