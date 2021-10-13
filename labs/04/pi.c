@@ -71,6 +71,7 @@ int main(){
     clock_t end = clock();
     double time_spent = (double)(end-begin) / CLOCKS_PER_SEC; 
 
+    // Print results
     printf("time = %f\n",time_spent);
 
     printf("# of points = %d , estimate of pi is %g \n",POINTS,pi);
