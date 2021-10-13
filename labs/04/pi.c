@@ -1,6 +1,8 @@
 /* This program compues pi
 using Monte Carlo algorithm and the implementation of
-Threads */
+Threads 
+Jose Miguel Figarola Prado
+*/
 
 #include <stdlib.h>
 #include <stdio.h>
