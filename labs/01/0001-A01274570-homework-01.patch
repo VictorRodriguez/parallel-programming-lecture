@@ -1,0 +1,26 @@
+From b86f5d87650f1365d631a4ae4242e4ea9d595a58 Mon Sep 17 00:00:00 2001
+From: OSWA00 <oswahdez00@gmail.com>
+Date: Thu, 23 Sep 2021 11:38:26 -0500
+Subject: [PATCH] A01274570-homework-01
+To: to@oswahdez00@gmail.com
+
+Signed-off-by: OSWA00 <oswahdez00@gmail.com>
+---
+ labs/01/hello.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/labs/01/hello.c b/labs/01/hello.c
+index 202b954..0299d0e 100644
+--- a/labs/01/hello.c
++++ b/labs/01/hello.c
+@@ -4,6 +4,6 @@
+ 
+ int main(void) {
+     printf("Hello World\n");
+-    printf("My name is Christopher Salvador Márquez Álvarez \n");
++    printf("My name is Oswaldo Hernandez\n");
+     return 0; 
+ }
+-- 
+2.17.1
+
