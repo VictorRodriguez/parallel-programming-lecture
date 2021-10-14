@@ -11,42 +11,62 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
-#define NUM_THREADS    5
-
-//Number of points we are going to randomly allocate
-int npoints = 1000000;
+//Number of threads
+const int num_threads = 8;
+//Number of points we are going to randomly place
+const long npoints = 285000000;
 //Number of points inside the circle
-int circle_point = 0;
+long circle_point = 0;
+//Point we are going to place 
+int points_per_thread = npoints / num_threads;
+//Max number 
+double a = 1.0;
 
-/*
-void *PrintHello(void *threadid)
-{
+pthread_mutex_t lock;
+
+//Counting points inside circle for pi calcultation thread function
+void *calculatePi(void *arg){
+    //Thread id
     long tid;
-    tid = (long)threadid;
-    printf("Hello World! It's me, thread #%ld!\n", tid);
-	global_variable++;
-	printf("Global variable %d\n",global_variable);
+    tid = (long) arg;
 
+    //Points placed
+    int i = 0;
+
+    //random coordinates
+    double x;
+    double y;
+    /*
+    //Random double number generation betwen 1 and 0
+    x = (double)rand()/(double)(RAND_MAX/a);
+    printf("Float random number is %lf\n",x);
+    */
+    //
+
+    pthread_mutex_lock(&lock);
+    for ( i=0; i < points_per_thread; i++){ 
+
+        //Random coordinate generation
+        x = (double)rand()/(double)(RAND_MAX/a);
+        y = (double)rand()/(double)(RAND_MAX/a);
+        //
+        double comp = sqrt(((x-0.5)*(x-0.5))+((y-0.5)*(y-0.5)));
+
+        if ( comp <= 0.5){
+            circle_point++;
+        }
+        
+    }
+    pthread_mutex_unlock(&lock);
     pthread_exit(NULL);
-}
-*/
-
-void *calculatePi(void* arg){
-
-    while (circle_point < npoints){
-        circle_point++ ;
-    }
-    if (circle_point >= npoints){
-        //printf("Thread end\n");
-        pthread_exit(NULL);
-    }
 }
 
 int main(int argc, char *argv[])
 {
     //Thread vector
-    pthread_t threads[NUM_THREADS];
+    pthread_t threads[num_threads];
 
     //Error variable
     int rc;
@@ -55,17 +75,15 @@ int main(int argc, char *argv[])
     //Initialize random seed
     srand(time(NULL));
 
-    //random number
-    double x;
-    double a = 1.0;
+    //pi
+    float pi = 0;
 
-    /*
-    //Random double number generation betwen 1 and 0
-    x = (double)rand()/(double)(RAND_MAX/a);
-    printf("Float random number is %lf\n",x);
-    */
+    if (pthread_mutex_init(&lock, NULL) != 0){
+        printf("\n mutex init failed\n");
+            exit(1);
+    }
 
-    for(tID=0;tID<NUM_THREADS;tID++){
+    for(tID=0;tID<num_threads;tID++){
         //printf("In main: creating thread %ld\n", tID);
         rc = pthread_create(&threads[tID], NULL, calculatePi, (void*)tID);
         if (rc){
@@ -74,10 +92,15 @@ int main(int argc, char *argv[])
         }
     }
 
-    while (circle_point < npoints){
+    //Wait until every thread end
 
+    for(tID = 0; tID < num_threads; tID++){
+        pthread_join(threads[tID],  NULL);
     }
-    printf("Finished program at %d iterations\n", circle_point);
+
+    pi = (4.00 * (float)circle_point) / (float)npoints;
+
+    printf("\nPi = %f\n", pi);
 
     /* Last thing that main() should do */
     pthread_exit(NULL);
