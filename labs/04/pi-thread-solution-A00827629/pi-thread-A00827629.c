@@ -4,7 +4,11 @@
 * *   This program estimates pi by using multithreading by random number method
 **    (also called Montecarlo Method) 
 * * AUTHOR: Juan Carlos Triana Vela
-* * LAST REVISED: 11/10/2021
+* * LAST REVISED: 13/10/2021
+
+Results and conclusions:
+https://drive.google.com/file/d/1SPCgxRV4PRBS2vmG5k6lRdMqjPpsQLP0/view?usp=sharing
+
 * ******************************************************************************/
 
 #include <pthread.h>
