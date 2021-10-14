@@ -14,9 +14,9 @@
 #include <math.h>
 
 //Number of threads
-const int num_threads = 5;
+const int num_threads = 10;
 //Number of points we are going to randomly place
-const long npoints = 400000000;
+const long npoints = 450000000;
 //Number of points inside the circle
 long circle_point = 0;
 //Point we are going to place 
@@ -106,6 +106,7 @@ int main(int argc, char *argv[])
 
     printf("\nPi = %f\n", pi);
 
-    /* Last thing that main() should do */
+    //End
+    pthread_mutex_destroy(&lock);
     pthread_exit(NULL);
 }
