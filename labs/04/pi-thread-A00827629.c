@@ -14,9 +14,9 @@
 #include <math.h>
 
 //Number of threads
-const int num_threads = 8;
+const int num_threads = 5;
 //Number of points we are going to randomly place
-const long npoints = 285000000;
+const long npoints = 400000000;
 //Number of points inside the circle
 long circle_point = 0;
 //Point we are going to place 
@@ -83,6 +83,10 @@ int main(int argc, char *argv[])
             exit(1);
     }
 
+    printf("Using %ld points\n", npoints);
+    printf("Using %d threads\n", num_threads);
+    printf("Placing %d points per thread\n", points_per_thread);
+    
     for(tID=0;tID<num_threads;tID++){
         //printf("In main: creating thread %ld\n", tID);
         rc = pthread_create(&threads[tID], NULL, calculatePi, (void*)tID);
