@@ -14,7 +14,7 @@
 #include <math.h>
 
 //Number of threads
-const int num_threads = 10;
+const int num_threads = 8;
 //Number of points we are going to randomly place
 const long npoints = 450000000;
 //Number of points inside the circle
