@@ -18,7 +18,7 @@ import sys, getopt
 
 def main(argv):
 
-    quantum = 12
+    quantum = 11
     context_switch = 2
     execution_time = 0
     avg_turnaround_tm = 0.0
