@@ -2,8 +2,22 @@
 
 ## Objective
 
-Make the students familiar with mutual exclusion objects (mutex). A mutex is a program object that allows
-multiple program threads to share the same resource, such as file access, but not simultaneously.
+Make the students familiar with Inter process communication.
+
+There are 2 types of process:
+
+* Independent Processes – Processes that do not share data with other processes.
+* Cooperating Processes – Processes that shares data with other processes.
+
+The cooperating process requires Inter process communication (IPC) mechanism.
+Inter-Process Communication is the mechanism by which cooperating process share
+data and information.  The mechanism that will allow them to exchange data and
+information are the following:
+
+* Shared memory    
+* Message Passing
+
+(Both examples here)
 
 # Requirements
 
@@ -13,25 +27,20 @@ multiple program threads to share the same resource, such as file access, but no
 ## Instructions
 
 * Create a program that handles the coordination of 5 milk sellers.
-* Each seller can sell a random number of bottles ( from 1 to 200 )
-* Each seller can sell to 5 costumers
+* Each seller can sell a random number of bottles ( from 1 to 500 )
 * The factory only can produce daily 1000 bottles
 * Headquarter need to take care that sellers do not sell more than 1000 bottles
+* Sellers shoudl be processes
+* Syncronization shoudl be with SEMAPHORES
+* Inter process comunication can be with Shared memory or Pipes (op to you)
 
-## Expected result:
-
-Please send the patch with your code in C using MUTEX or SEMAPHORES ( op to you )
-
-## Please send the mail as git send mail:
+## Please use your STUDENT-ID to create the commit
 
     ```
         $ git add milk_seller.c
-        $ git commit -s -m <STUDENT-ID>-homework-06
-        $ git send-email -1
+        $ git commit -s -m <STUDENT-ID>-homework-02
 
     ```
-Do some tests sending the mail to your personal account, if you get the mail,
-then you can be sure I will get the mail
 
 # Time to do the homework:
 
