@@ -2,7 +2,13 @@
  * Taken from
  * http://www.linuxdevcenter.com/pub/a/linux/2007/05/24/semaphores-in-linux.html?page=5
  */
-#include  <stdlib.h>
+/*
+Bryan Marquez - A01562119
+To execute, run the following 2 lines in your terminal
+$ gcc milk-server.c -o milk-server -lpthread -lrt
+$ ./milk-server
+*/
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -13,15 +19,15 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define SHMSZ 27
-char SEM_NAME[]= "vik";
+#define SHMSZ 54
+char SEM_NAME[]= "sync";
 
 int main()
 {
   char ch;
   int shmid;
   key_t key;
-  char *shm,*s;
+  int *shm,*s;
   sem_t *semaphore;
 
   //name the shared memory segment
@@ -49,18 +55,18 @@ int main()
 
   //start writing into memory
   s = shm;
-  for(ch='A';ch<='Z';ch++)
-    {
-      sem_wait(semaphore);
-      *s++ = ch;
-      sem_post(semaphore);
-    }
+  *s = 1000; //Milk bottles produced daily
 
+  //Code thing to run server until users stops it
   //the below loop could be replaced by binary semaphore
   while(*shm != '*')
     {
+      sem_wait(semaphore);
+      sem_post(semaphore);
       sleep(1);
     }
+  //ALL THE WAY TO HERE I GUESS
+
   sem_close(semaphore);
   sem_unlink(SEM_NAME);
   shmctl(shmid, IPC_RMID, 0);
