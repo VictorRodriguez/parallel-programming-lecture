@@ -17,7 +17,7 @@ tell if there is available milk or not.
 #include <sys/stat.h>
 #include <fcntl.h>
 
-#define SHMSZ 27
+#define SHMSZ 100
 char SEM_NAME[]= "Figarola";
 
 int main()
@@ -46,6 +46,7 @@ int main()
 
   //create & initialize semaphore
   mutex = sem_open(SEM_NAME,O_CREAT,0644,1);
+
   if(mutex == SEM_FAILED)
     {
       perror("unable to create semaphore");
@@ -80,10 +81,11 @@ int main()
         printf("Exit? ");
         // Press 1 to exit
         n = scanf("%d",&end);
-        
+
     }
   sem_close(mutex);
   sem_unlink(SEM_NAME);
   shmctl(shmid, IPC_RMID, 0);
   _exit(0);
+  
 }
