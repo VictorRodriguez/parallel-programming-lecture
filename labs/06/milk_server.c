@@ -18,7 +18,7 @@ tell if there is available milk or not.
 #include <fcntl.h>
 
 #define SHMSZ 27
-char SEM_NAME[]= "Figa";
+char SEM_NAME[]= "Figarola";
 
 int main()
 {
@@ -28,8 +28,21 @@ int main()
   char *shm,*s;
   sem_t *mutex;
 
-  //name the shared memory segment
+  // Declare semaphore
+  sem_t *semaphore;
+
+  key_t key;
+
+  //Shared M. varaiables
+  int *shm,*milk;
+
+  int shmid, n;
+
+  //Shared key
   key = 1000;
+
+  // End the program
+  int end = 0;
 
   //create & initialize semaphore
   mutex = sem_open(SEM_NAME,O_CREAT,0644,1);
@@ -48,22 +61,25 @@ int main()
       exit(-1);
     }
 
-  //attach this segment to virtual memory
+//attach this segment to virtual memory
   shm = shmat(shmid,NULL,0);
 
   //start writing into memory
-  s = shm;
-  for(ch='A';ch<='Z';ch++)
-    {
-      sem_wait(mutex);
-      *s++ = ch;
-      sem_post(mutex);
-    }
+  milk = shm;
+  // Initialize the number of milk bottles
+  *milk = 1000;
 
   //the below loop could be replaced by binary semaphore
   while(*shm != '*')
     {
-      sleep(1);
+        // Semaphore prints how many milks available
+        sem_wait(semaphore);
+        printf("Bottles: %d milk bottles\n",*milk);
+        // Then asks to exit
+        sem_post(semaphore);
+        printf("Exit? ");
+        // Press 1 to exit
+        n = scanf("%d",&end);
     }
   sem_close(mutex);
   sem_unlink(SEM_NAME);
