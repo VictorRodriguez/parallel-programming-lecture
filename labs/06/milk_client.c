@@ -54,20 +54,78 @@ int main()
     }
 
   //attach this segment to virtual memory
+  
+  //attach this segment to virtual memory
   shm = shmat(shmid,NULL,0);
 
   //start reading
-  s = shm;
-  for(s=shm;*s!=NULL;s++)
-    {
-      sem_wait(semaphore);
-      putchar(*s);
-      sem_post(semaphore);
-    }
+  milk = shm;
 
-  //once done signal exiting of reader:This can be replaced by another semaphore
-  *shm = '*';
+    // While client is in the menu
+    while (clientOP != 0){
+
+        // Print the options
+        printf("Option: \n");
+        printf("0. Exit\n");
+        printf("1. Consult available milk\n");
+        printf("2. Sell bottles of milk\n");
+        printf("Select: ");
+
+        // Read selected option
+        a = scanf("%d",&clientOP);
+        printf("\n");
+
+        // See aviable bottles
+        if (clientOP == 1){
+
+            // Semaphore prints how many milks available
+            sem_wait(semaphore);
+            printf("Bottles: %d milk bottles\n",*milk);
+            printf("\n");
+            sem_post(semaphore);
+
+        }
+        // Sell bottles
+        else if(clientOP == 2){
+
+            // Compare operations
+            sem_wait(semaphore);
+            if (*milk > 0){
+
+                // More than 0 bottles
+                printf("How many bottles are you going to sell?: ");
+                a = scanf("%d",&sell);
+                // What if he wants to sell more?
+                if ((*milk - sell) < 0){
+
+                    printf("Can't make this execution\n");
+                    printf("Not enough bottles available\n");
+                    printf("Bottles available: %d\n", *milk);
+                }
+
+                // If there is milk to sell
+                else{
+                    // Substract sold milk to current milk
+                    *milk = *milk -sell;    
+                }
+
+                printf("\n");
+            }
+            // No more milk in current key
+            else{
+
+                printf("No more milk available\n");
+                printf("\n");
+
+            }
+            sem_post(semaphore);
+        }
+
+        // Returning to menu
+        else{
+            printf("Exit...\n");
+        }
+    }
   sem_close(semaphore);
-  shmctl(shmid, IPC_RMID, 0);
   exit(0);
 }
