@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
@@ -16,17 +17,17 @@ int main()
   int shmid;
   key_t key;
   char *shm,*s;
-  sem_t *mutex;
+  sem_t *semaphore;
 
   //name the shared memory segment
   key = 1000;
 
   //create & initialize existing semaphore
-  mutex = sem_open(SEM_NAME,0,0644,0);
-  if(mutex == SEM_FAILED)
+  semaphore = sem_open(SEM_NAME,0,0644,0);
+  if(semaphore == SEM_FAILED)
     {
       perror("reader:unable to execute semaphore");
-      sem_close(mutex);
+      sem_close(semaphore);
       exit(-1);
     }
 
@@ -45,14 +46,14 @@ int main()
   s = shm;
   for(s=shm;*s!=NULL;s++)
     {
-      sem_wait(mutex);
+      sem_wait(semaphore);
       putchar(*s);
-      sem_post(mutex);
+      sem_post(semaphore);
     }
 
   //once done signal exiting of reader:This can be replaced by another semaphore
   *shm = '*';
-  sem_close(mutex);
+  sem_close(semaphore);
   shmctl(shmid, IPC_RMID, 0);
   exit(0);
 }
