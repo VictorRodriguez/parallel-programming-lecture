@@ -38,7 +38,7 @@ int main()
 
   int shmid, n;
 
-  / /Shared key
+  // Shared key
   key = 1000;
 
   // End the program
@@ -80,6 +80,7 @@ int main()
         printf("Exit? ");
         // Press 1 to exit
         n = scanf("%d",&end);
+        
     }
   sem_close(mutex);
   sem_unlink(SEM_NAME);
