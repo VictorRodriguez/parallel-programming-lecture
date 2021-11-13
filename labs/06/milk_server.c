@@ -33,12 +33,12 @@ int main()
 
   key_t key;
 
-  //Shared M. varaiables
+  // Shared M. varaiables
   int *shm,*milk;
 
   int shmid, n;
 
-  //Shared key
+  / /Shared key
   key = 1000;
 
   // End the program
