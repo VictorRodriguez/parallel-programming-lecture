@@ -35,7 +35,6 @@ void create_semaphore();
  */
 int main()
 {
-    printf("Hello world\n");
     create_semaphore();
     create_shared_memory();
 
@@ -49,17 +48,17 @@ int main()
     while (*num_bottles <= 1000 && *num_bottles > 0)
     {
         bottle_request = rand() % 500;
-        sem_wait(semaphore);
         if (*num_bottles - bottle_request > 0)
         {
+            sem_wait(semaphore);
             *num_bottles = *num_bottles - bottle_request;
+            sem_post(semaphore);
             printf("Selling %d bottles\n", bottle_request);
         }
         else
         {
             printf("%d bottles are not available\n", bottle_request);
         }
-        sem_post(semaphore);
         sleep(5);
     }
 
