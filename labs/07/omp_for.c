@@ -10,11 +10,9 @@ int main(int argc, char** argv){
         total_Sum = 0;
 
         #pragma omp for
-        {
             for(int i = 1; i <= 1000; i++){
                 partial_Sum += i;
             }
-        }
 
         //Create thread safe region.
         #pragma omp critical
@@ -23,6 +21,6 @@ int main(int argc, char** argv){
                 total_Sum += partial_Sum;
         }
     }
-    printf(“Total Sum: %d\n”, total_Sum);
+    printf("Total Sum: %d\n", total_Sum);
     return 0;
 }
