@@ -9,10 +9,10 @@ int main(int argc, char** argv){
         partial_Sum = 0;
         total_Sum = 0;
 
-        #pragma omp for
-            for(int i = 1; i <= 10; i++){
+    	printf("Hello from process: %d\n", omp_get_thread_num());
+		for(int i = 1; i <= 10; i++){
                 partial_Sum += i;
-            }
+        }
 
         //Create thread safe region.
         #pragma omp critical
