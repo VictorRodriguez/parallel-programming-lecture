@@ -1,0 +1,21 @@
+Ejercicios.
+
+1. Probar   el   primer   ejemplo   con   los   hilos   y   procesos   por  
+default de   la   computadora .(Ejemplo  1).  (Calificación  0.4)
+
+2. Probar   el   primer   ejemplo   con   cuatro   hilos   y   dos procesos.
+(Ejemplo   1).  (Calificación  0.4)
+
+3. Probar  el  primer  ejemplo  con  cuatro  hilos  y  cuatro  procesos. 
+(Ejemplo  1).  (Calificación  0.4
+
+4. Probar   el   primer   ejemplo   con   dos   hilos   y   cuatro   procesos.
+(Ejemplo   1).  (Calificación  0.4
+
+5. Realizar   la   suma   de   dos  vectores   utilizando   OpenMP   y   MPI
+con   dos  estrategias   de   solución .   Compara   el   tiempo de  
+ejecución de   las   dos  estrategias .  (Calificación  1.7).
+
+6.Realizar  el  ordenamiento  de  un  matriz de  N elementos por  el método  
+de  la burbuja con  OpenMP  y  MPI. (Calificación  1.7). Se  puede  realizar  
+en  binas
