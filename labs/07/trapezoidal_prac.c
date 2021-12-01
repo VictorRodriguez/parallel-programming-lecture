@@ -33,6 +33,9 @@ int main(){
     // Number of threas EXPORT NUM_OF_THREADS=x
     int thread_count = 8; 
 
+    // Pragma declaration, important private variables
+    // Integration variables for thread work
+    // i variable for iteration work
 	# pragma omp parallel num_threads(thread_count) shared(integration, k) private(i)
 	{
         #pragma omp for
@@ -43,7 +46,9 @@ int main(){
             }
 	}
 
+    // Compute integrations value
     integration = integration * delta/2;
+    // Print value
     printf("Integral pproximation: %.5f\n", integration);
     return 0;
 }
