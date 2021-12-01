@@ -1,3 +1,12 @@
+/*
+
+Jose Miguel Figarola Prado A01632557
+Trapezoidal aproximation for integral calculation using omp library.
+Wednesday 1st, December 2021.
+
+*/
+
+
 #include <stdio.h>
 #include <omp.h>
 #include <math.h>
