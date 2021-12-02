@@ -1,23 +1,22 @@
-/* H3 Bryan Marquez
+/* File: trapomp.c
 * Purpose: Estimate definite integral (or area under curve)
 * using the trapezoidal rule.
 *
 *
-* Compile: gcc -fopenmp -o trapomp trapomp.c -lm
+* Compile: gcc -g -Wall -fopenmp -o trapomp trapomp.c
 * Usage: ./trapomp <number of threads>
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-#include <math.h>
 
 void Trap(double a, double b, int n, double* global_result_p);
 double f(double x);
 
 int main(int argc, char* argv[]) {
     double global_result = 0.0;
-    double a=0, b=15;
+    d a=0, b=10;
     int n=100000;
     int thread_count;
 
@@ -45,7 +44,7 @@ void Trap(double a, double b, int n, double* global_result_p) {
     my_result = (f(local_a) + f(local_b))/2.0;
     for ( i = 1; i <= local_n-1; i++)
     {
-        x = sin(local_a+ i*h);
+        x = local_a + i*h;
         my_result += f(x);
     }
     my_result = my_result*h;
@@ -56,7 +55,5 @@ void Trap(double a, double b, int n, double* global_result_p) {
 }
 
 double f(double x) {
-    double return_val;
-    return_val = x*x;
-    return return_val;
+    return x*x*x + 2*x + 5; 
 }
