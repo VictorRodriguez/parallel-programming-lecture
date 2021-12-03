@@ -19,8 +19,8 @@ int main(){
     float k;
     int i;
     int lower = 0;
-    int upper = 1;
-    int interval = 6;
+    int upper = 5;
+    int interval = 10;
 
 
     // step size or delta x
@@ -30,7 +30,7 @@ int main(){
     float integration = f(lower) + f(upper);
 
     // Number of threas EXPORT NUM_OF_THREADS=x
-    int thread_count = 8; 
+    int thread_count = 12; 
 
 	# pragma omp parallel num_threads(thread_count) shared(integration, k) private(i)
 	{
