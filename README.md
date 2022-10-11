@@ -20,6 +20,8 @@ Agenda:
        * https://drive.google.com/file/d/0B7iKrGdVkDhIN1A2Y1AwbkpIeHM/view?usp=sharing&resourcekey=0-YGEA2hgiFu_TxsWP4HXNyQ
   * Process Synchronization (week 4 - 5)
        * https://drive.google.com/file/d/0B7iKrGdVkDhIbDg1VHY4aUNkZzg/view?usp=sharing&resourcekey=0-MRqyxftaj3CVV2Hc4z5emg
+  * Scheduler: 
+       * https://drive.google.com/file/d/1laL8G_mfL16LxbvDZQx6cQhtu21qP_sC/view?usp=sharing
   * Parallel Hardware and Parallel Software (week 6 - 7)
   * Shared Memory Programing with OpenMP (week 8 - 9)
   * Distributed Memory programing with MPI (week 10)
