@@ -23,6 +23,7 @@ Agenda:
   * Scheduler: 
        * https://drive.google.com/file/d/1laL8G_mfL16LxbvDZQx6cQhtu21qP_sC/view?usp=sharing
   * Parallel Hardware and Parallel Software (week 6 - 7)
+       * https://docs.google.com/presentation/d/1mIuxrpeq8Eef6yq_kWvb3C32PC_znO4JdVt-V93Yn-g/edit?usp=sharing
   * Shared Memory Programing with OpenMP (week 8 - 9)
   * Distributed Memory programing with MPI (week 10)
 
