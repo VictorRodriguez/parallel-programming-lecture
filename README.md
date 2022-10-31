@@ -25,6 +25,7 @@ Agenda:
   * Parallel Hardware and Parallel Software (week 6 - 7)
        * https://docs.google.com/presentation/d/1mIuxrpeq8Eef6yq_kWvb3C32PC_znO4JdVt-V93Yn-g/edit?usp=sharing
   * Shared Memory Programing with OpenMP (week 8 - 9)
+       * https://docs.google.com/presentation/d/1tM2-Kmkvt9_qccR4ySjFTVIFPDn8ej3cXRiZ_t1N-Sg/edit?usp=sharing
   * Distributed Memory programing with MPI (week 10)
 
 Oftopic Trainings ( in case student needs them )
