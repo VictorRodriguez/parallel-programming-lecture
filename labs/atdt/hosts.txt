@@ -1,0 +1,1 @@
+vrodri3-workstation slots=16
